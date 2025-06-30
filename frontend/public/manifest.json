@@ -1,0 +1,15 @@
+{
+  "short_name": "VESLINT",
+  "name": "VESLINT - VEssel Surveillance & Logging INTelligence",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0A192F",
+  "background_color": "#0A192F"
+}

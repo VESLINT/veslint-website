@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to jobs collection for development
+    match /jobs/{jobId} {
+      allow read, write: if true;
+      
+      // Allow access to results subcollection
+      match /results/{resultId} {
+        allow read, write: if true;
+      }
+    }
+    
+    // Default rule - allow all for development
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAuthor == true;
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow uploads to the uploads/ directory
+    match /uploads/{allPaths=**} {
+      allow read, write: if true; // Allow all for development
+    }
+    
+    // Allow read access to chunks/ directory  
+    match /chunks/{allPaths=**} {
+      allow read, write: if true; // Allow all for development
+    }
+    
+    // Default rule for other files
+    match /{allPaths=**} {
+      allow read, write: if true; // Allow all for development
+    }
+  }
+}

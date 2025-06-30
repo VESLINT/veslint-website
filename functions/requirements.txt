@@ -1,0 +1,7 @@
+firebase-functions
+firebase-admin
+google-cloud-pubsub
+pandas
+scikit-learn
+joblib
+numpy
